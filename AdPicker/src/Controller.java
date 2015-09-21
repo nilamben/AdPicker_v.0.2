@@ -33,8 +33,7 @@ public class Controller {
 			MaxentTagger tagger = new MaxentTagger("taggers/left3words-wsj-0-18.tagger");
 
 			Class.forName("org.sqlite.JDBC");
-			Connection dbConn = DriverManager.getConnection("jdbc:sqlite:Ad_Picker_db.db");
-			// System.out.println("Opened DB successfully");
+			Connection dbConn = DriverManager.getConnection("jdbc:sqlite:Ad_Picker_db.db"); 
 			Statement stmt = dbConn.createStatement();
 			ResultSet resultSet = stmt.executeQuery("SELECT Category_ID ID, Category_NAME Name, Keywords FROM Dictionary");
 
@@ -45,7 +44,6 @@ public class Controller {
 
 					// Tag words
 					String taggedTitle = tagger.tagTokenizedString(snippet.get("title").toString());
-					// System.out.println("Tagged Title:" + taggedTitle);
 
 					// Get desired keywords
 					String[] taggedWords = taggedTitle.split(" ");
