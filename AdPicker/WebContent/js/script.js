@@ -11,7 +11,7 @@ function fetchSearchData() {
 		froMine : true,
 		maxResults : 10,
 		videoDefinition : 'high',
-		key : 'AIzaSyAKRqRiIARFPkuJveoNLGCmZtABp2g413k'
+		key : 'YOUR KEY'
 	}, function(data) {
 		var output;
 		$.each(data.items, function(i, item) {
